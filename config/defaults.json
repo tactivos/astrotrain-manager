@@ -1,0 +1,56 @@
+{
+  "bodyParser": {
+    "limit": "5mb"
+  },
+  "endpoints": {
+    "whitelisted": [
+      "/",
+      "/ping"
+    ],
+    "shipit": [
+      "/shipit/jobs",
+      "/assets",
+      "/shipit-api"
+    ]
+  },
+  "env": "development",
+  "github": {
+    "api": "api.github.com",
+    "organization": "tactivos",
+    "secret": "",
+    "token": "",
+    "userAgent": "harbour-tasks",
+    "username": ""
+  },
+  "port": 3000,
+  "rollbar": {
+    "env": "development",
+    "token": "your-server-project-token"
+  },
+  "shipit": {
+    "db": {
+      "prefix": "shpt",
+      "redis": {
+        "db": "your-redis-db",
+        "host": "your-redis-host",
+        "port": 6379
+      }
+    },
+    "managers": [],
+    "platform": [],
+    "slack": {
+      "channel": "shipit-test",
+      "managementTeam": "",
+      "token": "your-slack-bot-token"
+    },
+    "auth": {
+      "username": "",
+      "password": ""
+    }
+  },
+  "slack": {
+    "tokens": {
+      "authorisation": "slack-token"
+    }
+  }
+}

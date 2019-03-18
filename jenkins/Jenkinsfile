@@ -1,0 +1,34 @@
+node {
+  timeout(BUILD_TIMEOUT.toInteger()) {
+    checkout scm
+
+    try {
+      stage("load commons environment variables") {
+        @Library("commons") _
+      }
+
+      stage("pre build") {
+        docker_.login()
+        build.setup([
+          repo: "mural-harbour",
+          rollbar_token: "HARBOUR_ROLLBAR_ACCESS_TOKEN"
+        ])
+      }
+
+      stage("build") {
+        docker_.build([ args: [ NPM_TOKEN: "NPM_TOKEN" ] ])
+        docker_.run("npm run test")
+      }
+
+      stage("post build") {
+        build.tagAndPush()
+        build.finish()
+      }
+
+    } catch (err) {
+      build.fail()
+    } finally {
+      deleteDir()
+    }
+  }
+}

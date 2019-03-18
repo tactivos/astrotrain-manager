@@ -1,0 +1,15 @@
+*.log
+.dockerignore
+.DS_Store
+.eslintcache
+.eslintrc
+.git
+.gitignore
+.zappr.yaml
+jenkins
+node_modules
+npm-debug.log*
+README.md
+
+config/*.json
+!config/defaults.json

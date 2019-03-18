@@ -1,0 +1,4 @@
+commit:
+  message:
+    patterns:
+      - ^(git subrepo|Add|Update|Fix|Merge|Remove|Initial|Create|Refactor|Revert|(fix|chore)+(\([a-z]+\))?:)\s.+(\n{2}|$)
