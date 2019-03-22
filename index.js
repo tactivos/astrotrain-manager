@@ -7,8 +7,6 @@ const express = require('express')
 const loader = require('./helpers/folder-loader')
 const reqExtend = require('./middlewares/req-extend')
 const secureHook = require('./middlewares/secure-hook')
-const shipit = require('./helpers/shipit')
-const shipitUI = require('./helpers/shipit-ui')
 
 const server = express()
 
@@ -28,9 +26,6 @@ server.use(reqExtend)
 
 /* Routes */
 routes.forEach(route => server.use(require(route)))
-
-/* Initialize Shipit UI */
-shipitUI(server, shipit.kue, '/shipit', '/shipit-api');
 
 /* Start up the server */
 server.listen(config.port, () => {

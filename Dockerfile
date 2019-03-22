@@ -1,15 +1,10 @@
 FROM node:10.15.3-alpine
 
-ARG NPM_TOKEN
-
-ENV NPM_TOKEN=$NPM_TOKEN \
-  NODE_ENV=production
-
-RUN npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+ENV NODE_ENV=production
 
 WORKDIR /usr/src
 
-COPY ["package.json", "package-lock.json", "/usr/src/"]
+COPY ["package.json", "package-lock.json", "key.pem", "/usr/src/"]
 
 # Install only production dependencies
 RUN npm install --only=production --loglevel=warn --progress=false --porcelain

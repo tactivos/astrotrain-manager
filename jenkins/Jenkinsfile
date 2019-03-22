@@ -10,13 +10,14 @@ node {
       stage("pre build") {
         docker_.login()
         build.setup([
-          repo: "mural-harbour",
-          rollbar_token: "HARBOUR_ROLLBAR_ACCESS_TOKEN"
+          repo: "astrotrain-manager",
+          rollbar_token: "ASTROTRAIN_MANAGER_ROLLBAR_ACCESS_TOKEN",
+          swarm_key: [ id: "ASTROTRAIN_MANAGER_KEY", name: "key.pem" ]
         ])
       }
 
       stage("build") {
-        docker_.build([ args: [ NPM_TOKEN: "NPM_TOKEN" ] ])
+        docker_.build()
         docker_.run("npm run test")
       }
 

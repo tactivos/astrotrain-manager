@@ -1,6 +1,6 @@
 /* Modules */
 const config = require('dos-config');
-const log = require('debug')('harbour:errors');
+const log = require('debug')('astrotrain-manager:errors');
 const Rollbar = require("rollbar");
 const rollbar = new Rollbar({
   accessToken: config.rollbar.token,

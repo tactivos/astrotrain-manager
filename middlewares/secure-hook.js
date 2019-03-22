@@ -13,11 +13,8 @@ module.exports = (req, res, next) => {
   const signature = req.headers['x-hub-signature'];
   const url = req.originalUrl;
 
-  const shipitUIURL = config.endpoints.shipit.find(e => url.indexOf(e) !== -1);
-
   if (
     !config.endpoints.whitelisted.includes(url) &&
-    !shipitUIURL &&
     !validRequest(payload, secret, signature)
   ) {
     return res.status(400).send(error);

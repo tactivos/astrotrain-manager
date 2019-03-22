@@ -3,7 +3,7 @@ const config = require('dos-config');
 const crypto = require('crypto');
 
 /* Constants */
-const TOKENS = [config.slack.tokens.authorisation];
+const TOKENS = Object.values(config.tokens);
 
 module.exports = (payload, secret, sign) => {
 
