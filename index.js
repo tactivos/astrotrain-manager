@@ -4,14 +4,14 @@ const config = require('dos-config')
 const express = require('express')
 
 /* Helpers & Middlewares modules */
-const loader = require('./helpers/folder-loader')
-const reqExtend = require('./middlewares/req-extend')
-const secureHook = require('./middlewares/secure-hook')
+const loader = require('./lib/helpers/folder-loader')
+const reqExtend = require('./lib/middlewares/req-extend')
+const secureHook = require('./lib/middlewares/secure-hook')
 
 const server = express()
 
 /* Loaders */
-const routes = loader('lib/modules', ['index.js'])
+const routes = loader('lib/routes')
 
 /* External middlewares */
 server.use(bodyParser.json({ limit: config.bodyParser.limit }))
