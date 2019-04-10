@@ -5,8 +5,11 @@ const express = require('express')
 
 /* Helpers & Middlewares modules */
 const loader = require('./lib/helpers/folder-loader')
+const { processMessages } = require('./lib/helpers/queue')
 const reqExtend = require('./lib/middlewares/req-extend')
 const secureHook = require('./lib/middlewares/secure-hook')
+
+const webhooksManager = require('./lib/handlers/webhooks/setup')
 
 const server = express()
 
@@ -27,9 +30,16 @@ server.use(reqExtend)
 /* Routes */
 routes.forEach(route => server.use(require(route)))
 
+const run = async () => {
+  processMessages(webhooksManager);
+  setTimeout(run, config.setup.interval);
+};
+
 /* Start up the server */
 server.listen(config.port, () => {
   console.log(`Listening on port ${config.port}`)
+  run()
+  console.log(`Message processor is ready`)
 })
 
 module.exports = server

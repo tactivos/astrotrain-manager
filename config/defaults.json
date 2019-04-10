@@ -1,4 +1,13 @@
 {
+  "azure": {
+    "storage": {
+      "accessKey": "your-azure-storage-access-key",
+      "account": "your-azure-storage-account-name"
+    },
+    "queue": {
+      "webhooks": "webhooks"
+    }
+  },
   "bodyParser": {
     "limit": "5mb"
   },
@@ -21,6 +30,11 @@
   "rollbar": {
     "env": "development",
     "token": "your-server-project-token"
+  },
+  "setup": {
+    "interval": 3000,
+    "visibilityTimeout": 30,
+    "numOfMessages": 1
   },
   "tokens": {}
 }
