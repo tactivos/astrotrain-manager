@@ -3,9 +3,12 @@ const bodyParser = require('body-parser')
 const config = require('dos-config')
 const express = require('express')
 
-/* Helpers & Middlewares modules */
+/* Helpers */
 const loader = require('./lib/helpers/folder-loader')
 const { processMessages } = require('./lib/helpers/queue')
+require('./lib/helpers/rollbar')()
+
+/* Middlewares */
 const reqExtend = require('./lib/middlewares/req-extend')
 const secureHook = require('./lib/middlewares/secure-hook')
 

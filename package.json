@@ -23,7 +23,8 @@
     "joi": "14.3.1",
     "lodash": "4.17.11",
     "promises-all": "1.0.0",
-    "rollbar": "2.5.4"
+    "rollbar": "2.5.4",
+    "slack": "11.0.2"
   },
   "devDependencies": {
     "eslint": "5.15.3",

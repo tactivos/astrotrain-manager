@@ -28,13 +28,21 @@
   },
   "port": 3000,
   "rollbar": {
+    "accessToken": "",
     "env": "development",
-    "token": "your-server-project-token"
+    "captureUncaught": true,
+    "captureUnhandledRejections": true
   },
   "setup": {
     "interval": 3000,
     "visibilityTimeout": 30,
     "numOfMessages": 1
+  },
+  "slack": {
+    "channels": {
+      "releaseTrain": "release-train"
+    },
+    "token": ""
   },
   "tokens": {}
 }
