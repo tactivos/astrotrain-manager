@@ -24,6 +24,16 @@
     "secret": ""
   },
   "platform": {
+    "backmerge": {
+      "beta": "master",
+      "stable": "beta"
+    },
+    "branch": {
+      "beta": "beta",
+      "development": "master",
+      "stable": "stable"
+    },
+    "manifest": "manifest.json",
     "repo": "platform-release"
   },
   "port": 3000,
