@@ -33,6 +33,7 @@
       "development": "master",
       "stable": "stable"
     },
+    "changelog": "CHANGELOG.md",
     "manifest": "manifest.json",
     "repo": "platform-release"
   },
