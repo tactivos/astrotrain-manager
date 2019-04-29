@@ -25,6 +25,7 @@
     "lodash": "4.17.11",
     "promises-all": "1.0.0",
     "rollbar": "2.5.4",
+    "semver": "6.0.0",
     "slack": "11.0.2"
   },
   "devDependencies": {
