@@ -1,6 +1,6 @@
 {
   "name": "astrotrain-manager",
-  "author": "Nicolás Echezarreta",
+  "author": "MURAL",
   "repository": "https://github.com/tactivos/astrotrain-manager",
   "version": "1.0.0",
   "description": "Service for running managing tasks for Atrotrain",
@@ -8,6 +8,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "clean": "rm -rf ./node_modules",
+    "docker:build": "./scripts/docker-build.sh",
+    "docker:run": "./scripts/docker-run.sh",
     "lint": "eslint --cache .",
     "start": "DEBUG=astrotrain-manager* nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 0"

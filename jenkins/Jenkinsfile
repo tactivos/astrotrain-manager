@@ -17,7 +17,7 @@ node {
       }
 
       stage("build") {
-        docker_.build()
+        docker_.build([ dockerfile: "docker/production.Dockerfile" ])
         docker_.run("npm run test")
       }
 
