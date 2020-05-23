@@ -15,12 +15,18 @@
   "dependencies": {
     "@octokit/app": "2.2.2",
     "@octokit/rest": "16.20.0",
+    "azure-storage": "2.10.2",
     "body-parser": "1.18.3",
     "debug": "4.1.1",
+    "deep-diff": "1.0.2",
     "dos-config": "3.0.2",
     "express": "4.16.4",
+    "joi": "14.3.1",
     "lodash": "4.17.11",
-    "rollbar": "2.5.4"
+    "promises-all": "1.0.0",
+    "rollbar": "2.5.4",
+    "semver": "6.0.0",
+    "slack": "11.0.2"
   },
   "devDependencies": {
     "eslint": "5.15.3",

@@ -1,4 +1,13 @@
 {
+  "azure": {
+    "storage": {
+      "accessKey": "your-azure-storage-access-key",
+      "account": "your-azure-storage-account-name"
+    },
+    "queue": {
+      "webhooks": "webhooks"
+    }
+  },
   "bodyParser": {
     "limit": "5mb"
   },
@@ -15,12 +24,36 @@
     "secret": ""
   },
   "platform": {
+    "backmerge": {
+      "beta": "master",
+      "stable": "beta"
+    },
+    "branch": {
+      "beta": "beta",
+      "development": "master",
+      "stable": "stable"
+    },
+    "changelog": "CHANGELOG.md",
+    "manifest": "manifest.json",
     "repo": "platform-release"
   },
   "port": 3000,
   "rollbar": {
+    "accessToken": "",
     "env": "development",
-    "token": "your-server-project-token"
+    "captureUncaught": true,
+    "captureUnhandledRejections": true
+  },
+  "setup": {
+    "interval": 3000,
+    "visibilityTimeout": 30,
+    "numOfMessages": 1
+  },
+  "slack": {
+    "channels": {
+      "releaseTrain": "release-train"
+    },
+    "token": ""
   },
   "tokens": {}
 }
