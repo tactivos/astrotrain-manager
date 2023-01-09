@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
-    "@octokit/app": "2.2.2",
+    "@octokit/app": "13.1.1",
     "@octokit/rest": "16.20.0",
     "body-parser": "1.18.3",
     "debug": "4.1.1",
